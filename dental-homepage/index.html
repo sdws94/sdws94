@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>서울튼튼플란트치과</title>
+<meta name="description" content="강원 홍천군 홍천읍 서울튼튼플란트치과. 통합치의학과 전문의가 진료하는 임플란트·보철 중심 치과. 2027년 1월 개원 예정.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* 레이아웃: 로고의 남색 띠와 인테리어의 모래색 면이 번갈아 놓이는 한 페이지. 노란색은 '튼튼'과 꼭 눌러야 할 것에만 쓴다. */
+:root{
+  --navy:#1d3273; --navy-deep:#142350; --navy-soft:#e9edf7;
+  --yellow:#f3cd3c; --yellow-deep:#b98a00;
+  --sand:#f5f1e8; --sand-line:#e2dccd; --paper:#ffffff;
+  --ink:#171d30; --muted:#5d6377; --on-navy:#ffffff; --on-navy-muted:#c3cbe4;
+  --display:"Gothic A1","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --r:18px; --wrap:1120px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;word-break:keep-all;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+h1,h2,h3,p,ul,dl,dd,figure{margin:0}
+ul{padding:0;list-style:none}
+a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.3;letter-spacing:-.02em}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.tn{color:var(--yellow)}
+.tbd{display:inline-block;border:1px dashed currentColor;border-radius:6px;padding:0 .45em;font-size:.86em;opacity:.8}
+
+/* 헤더 */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--paper);border-bottom:1px solid var(--sand-line)}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:900;font-size:1.18rem;letter-spacing:-.03em;color:var(--navy);white-space:nowrap}
+.brand svg{width:36px;height:36px;flex:none}
+.brand b{color:var(--yellow-deep)}
+.nav{display:flex;gap:26px;margin-left:auto;font-weight:500;font-size:.95rem}
+.nav a{text-decoration:none;padding-block:6px;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--yellow)}
+.tel{font-family:var(--display);font-weight:800;color:var(--navy);font-size:1.05rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tel small{display:block;font-family:var(--body);font-weight:500;font-size:.7rem;color:var(--muted);line-height:1.2}
+@media (max-width:900px){.nav{display:none}.tel{margin-left:auto;text-align:right}}
+
+/* 히어로 */
+.hero{background:var(--navy);color:var(--on-navy)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;align-items:center;padding-block:64px 72px}
+.badge{display:inline-block;background:var(--yellow);color:var(--navy-deep);font-family:var(--display);font-weight:800;font-size:.9rem;padding:6px 16px;border-radius:999px}
+.hero h1{font-size:clamp(2rem,5.2vw,3.5rem);font-weight:900;margin-block:22px 20px}
+.hero p{color:var(--on-navy-muted);font-size:1.06rem;max-width:30em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;font-family:var(--display);font-weight:800;text-decoration:none;font-size:1rem}
+.btn-y{background:var(--yellow);color:var(--navy-deep)}
+.btn-y:hover{background:#ffdf5c}
+.btn-o{border:1.5px solid var(--on-navy-muted);color:var(--on-navy)}
+.btn-o:hover{border-color:var(--on-navy)}
+.hero figure{position:relative}
+.hero img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:24px}
+.hero figcaption{position:absolute;left:16px;bottom:16px;background:var(--paper);color:var(--navy);font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:999px}
+.facts{background:var(--navy-deep);color:var(--on-navy)}
+.facts ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.facts li{padding:22px 20px;border-left:1px solid rgba(255,255,255,.14)}
+.facts li:first-child{border-left:0;padding-left:0}
+.facts span{display:block;font-size:.8rem;color:var(--on-navy-muted)}
+.facts strong{font-family:var(--display);font-weight:800;font-size:1.05rem;font-variant-numeric:tabular-nums}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:32px;padding-block:40px 48px}
+  .facts ul{grid-template-columns:1fr 1fr}
+  .facts li{padding:16px 12px;border-left:0;border-top:1px solid rgba(255,255,255,.14)}
+  .facts li:first-child{padding-left:12px}
+  .facts li:nth-child(-n+2){border-top:0}
+}
+
+/* 공통 섹션 */
+section{padding-block:88px}
+.sand{background:var(--sand)}
+.eyebrow{font-family:var(--display);font-weight:800;font-size:.82rem;letter-spacing:.14em;color:var(--yellow-deep)}
+.head{display:grid;gap:10px;margin-bottom:44px;max-width:40em}
+.head h2{font-size:clamp(1.6rem,3.6vw,2.4rem);font-weight:900;color:var(--navy)}
+.head p{color:var(--muted)}
+@media (max-width:700px){section{padding-block:60px}.head{margin-bottom:30px}}
+
+/* 인사말 */
+.promise{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid var(--navy)}
+.promise li{padding:28px 28px 8px 0;border-right:1px solid var(--sand-line);margin-right:28px}
+.promise li:last-child{border-right:0;margin-right:0}
+.promise h3{font-size:1.2rem;font-weight:800;color:var(--navy);margin-bottom:10px}
+.promise p{color:var(--muted);font-size:.97rem}
+@media (max-width:800px){.promise{grid-template-columns:1fr}.promise li{border-right:0;margin-right:0;padding:22px 0;border-bottom:1px solid var(--sand-line)}}
+
+/* 의료진 */
+.doc{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:56px;align-items:start}
+.portrait{aspect-ratio:4/5;max-width:100%;border-radius:var(--r);background:var(--navy-soft);display:grid;place-items:center;text-align:center;color:var(--navy);font-size:.9rem;padding:20px}
+.portrait svg{width:96px;height:96px;margin:0 auto 12px;display:block;opacity:.55}
+.doc h3{font-size:1.9rem;font-weight:900;color:var(--navy)}
+.doc h3 small{font-size:1rem;font-weight:700;color:var(--muted);margin-right:8px}
+.spec{display:inline-block;margin-top:12px;background:var(--navy);color:var(--on-navy);font-weight:700;font-size:.9rem;padding:5px 14px;border-radius:999px}
+.doc blockquote{margin:26px 0;padding:0;font-size:1.12rem;line-height:1.8;color:var(--ink)}
+.cv{display:grid;gap:8px;border-top:1px solid var(--sand-line);padding-top:22px;color:var(--muted);font-size:.97rem}
+.cv li{display:flex;gap:10px}
+.cv li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--yellow);margin-top:.72em}
+@media (max-width:800px){.doc{grid-template-columns:1fr;gap:28px}.portrait{max-width:280px}}
+
+/* 진료과목 */
+.focus{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);background:var(--navy);color:var(--on-navy);border-radius:24px;overflow:hidden;margin-bottom:28px}
+.focus img{width:100%;height:100%;min-height:260px;object-fit:cover;display:block}
+.focus div{padding:40px;align-self:center}
+.focus h3{font-size:1.6rem;font-weight:900;margin-bottom:12px}
+.focus p{color:var(--on-navy-muted)}
+.focus ul{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.focus li{border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:3px 14px;font-size:.88rem}
+.care{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--sand-line);border:1px solid var(--sand-line);border-radius:var(--r);overflow:hidden}
+.care li{background:var(--paper);padding:26px 24px}
+.care h3{font-size:1.08rem;font-weight:800;color:var(--navy);margin-bottom:6px}
+.care p{font-size:.93rem;color:var(--muted);line-height:1.65}
+@media (max-width:860px){.focus{grid-template-columns:1fr}.focus div{padding:28px 24px}.care{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.care{grid-template-columns:1fr}}
+
+/* 둘러보기 */
+.tour{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tour figure{position:relative;border-radius:var(--r);overflow:hidden;background:var(--sand-line)}
+.tour figure:first-child{grid-column:1/-1}
+.tour img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}
+.tour figure:first-child img{aspect-ratio:21/9}
+.tour figcaption{position:absolute;left:14px;top:14px;background:var(--paper);color:var(--navy);font-weight:700;font-size:.85rem;padding:4px 14px;border-radius:999px}
+.note{margin-top:16px;font-size:.85rem;color:var(--muted)}
+@media (max-width:700px){.tour{grid-template-columns:1fr}.tour figure:first-child img{aspect-ratio:16/9}}
+
+/* 진료시간·오시는 길 */
+.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.card{background:var(--paper);border-radius:24px;padding:36px}
+.card h3{font-size:1.3rem;font-weight:900;color:var(--navy);margin-bottom:18px}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours th,.hours td{padding:13px 0;border-bottom:1px solid var(--sand-line);text-align:left;font-weight:500}
+.hours th{width:5.5em;color:var(--muted)}
+.hours td{font-family:var(--display);font-weight:800;font-size:1.08rem}
+.hours td small{font-family:var(--body);font-weight:500;font-size:.8rem;color:var(--muted);margin-left:8px}
+.hours tr.today th{color:var(--navy);font-weight:700}
+.hours tr.today th::after{content:"오늘";margin-left:6px;background:var(--yellow);color:var(--navy-deep);font-size:.68rem;padding:1px 7px;border-radius:999px;vertical-align:1px}
+.hours .off td{color:var(--muted)}
+.night{display:inline-block;background:var(--navy);color:var(--on-navy);font-family:var(--body);font-size:.72rem;font-weight:700;padding:1px 9px;border-radius:999px;margin-left:8px;vertical-align:2px}
+.card .fine{margin-top:16px;font-size:.88rem;color:var(--muted)}
+.addr{font-family:var(--display);font-weight:800;font-size:1.15rem;line-height:1.6}
+.way{display:grid;gap:14px;margin-top:22px;padding-top:22px;border-top:1px solid var(--sand-line)}
+.way div{display:grid;grid-template-columns:4.5em 1fr;gap:10px;font-size:.95rem}
+.way dt{color:var(--muted)}
+.maps{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.maps a{flex:1 1 130px;text-align:center;text-decoration:none;font-weight:700;font-size:.92rem;border:1.5px solid var(--navy);color:var(--navy);border-radius:999px;padding:10px 16px}
+.maps a:hover{background:var(--navy);color:var(--on-navy)}
+@media (max-width:860px){.visit{grid-template-columns:1fr}.card{padding:26px 22px}}
+
+/* FAQ */
+.faq{max-width:820px;border-top:2px solid var(--navy)}
+.faq details{border-bottom:1px solid var(--sand-line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;gap:14px;align-items:baseline;padding:22px 0;font-family:var(--display);font-weight:800;font-size:1.06rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";color:var(--yellow-deep);font-weight:900}
+.faq summary::after{content:"+";margin-left:auto;color:var(--navy);font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding:0 0 24px 30px;color:var(--muted)}
+
+/* 마무리·푸터 */
+.close{background:var(--navy);color:var(--on-navy);text-align:left}
+.close .wrap{display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between}
+.close h2{font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:900}
+.close p{color:var(--on-navy-muted);margin-top:8px}
+.close .num{font-family:var(--display);font-weight:900;font-size:clamp(1.8rem,5vw,2.8rem);color:var(--yellow);font-variant-numeric:tabular-nums;line-height:1.2;user-select:all}
+footer{background:var(--navy-deep);color:var(--on-navy-muted);font-size:.85rem;padding-block:36px 110px}
+footer strong{color:var(--on-navy);font-family:var(--display);font-size:1rem}
+footer p{margin-top:6px}
+
+/* 빠른 메뉴 */
+.quick{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:40;display:grid;gap:8px}
+.quick a{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;text-decoration:none;font-family:var(--display);font-weight:800;font-size:.78rem;line-height:1.15;text-align:center;background:var(--navy);color:var(--on-navy);box-shadow:0 6px 18px rgba(20,35,80,.28)}
+.quick a.y{background:var(--yellow);color:var(--navy-deep)}
+.bar{display:none}
+@media (max-width:700px){
+  .quick{display:none}
+  .bar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;inset:auto 0 0;z-index:40;background:var(--navy-deep);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+  .bar a{padding:14px 6px;text-align:center;text-decoration:none;color:var(--on-navy);font-family:var(--display);font-weight:800;font-size:.92rem;border-left:1px solid rgba(255,255,255,.14)}
+  .bar a:first-child{border-left:0;background:var(--yellow);color:var(--navy-deep)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="서울튼튼플란트치과 처음으로">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 10c-4-4-15-4-15 7 0 9 4 12 5 20 .5 4 5 4 5.500 0 .6-5 1.500-8 4.500-8s3.900 3 4.500 8c.5 4 5 4 5.500 0 1-8 5-11 5-20 0-11-11-11-15-7z" fill="none" stroke="#1d3273" stroke-width="3.200" stroke-linejoin="round"/><path d="M41 3l1.300 3.700L46 8l-3.700 1.300L41 13l-1.300-3.700L36 8l3.700-1.300z" fill="#f3cd3c"/></svg>
+      <span>서울<b>튼튼</b>플란트치과</span>
+    </a>
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#about">치과 소개</a><a href="#doctor">의료진</a><a href="#care">진료과목</a><a href="#tour">둘러보기</a><a href="#hours">진료시간</a><a href="#map">오시는 길</a>
+    </nav>
+    <div class="tel"><small>진료 예약·상담</small>033-000-0000</div>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="badge">2027년 1월 홍천읍 개원 예정</span>
+      <h1>오래 쓰는 치아를 위해,<br><span class="tn">튼튼</span>하게 심고<br>꼼꼼하게 살핍니다.</h1>
+      <p>통합치의학과 전문의가 처음 상담부터 수술, 보철, 정기 점검까지 직접 진료하는 홍천의 임플란트·보철 중심 치과입니다.</p>
+      <div class="cta">
+        <a class="btn btn-y" href="#hours">진료시간 보기</a>
+        <a class="btn btn-o" href="#map">오시는 길</a>
+      </div>
+    </div>
+    <figure>
+      <img src="img/lobby.jpg" alt="서울튼튼플란트치과 접수 데스크와 대기 공간 투시도" width="1340" height="740">
+      <figcaption>접수·대기 공간 (인테리어 투시도)</figcaption>
+    </figure>
+  </div>
+</div>
+<div class="facts">
+  <div class="wrap">
+    <ul>
+      <li><span>진료</span><strong>통합치의학과 전문의</strong></li>
+      <li><span>평일</span><strong>09:00 – 18:00</strong></li>
+      <li><span>야간 (둘째·넷째 목요일)</span><strong>19:30까지</strong></li>
+      <li><span>토요일 (점심시간 없이)</span><strong>09:00 – 14:00</strong></li>
+    </ul>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">ABOUT</span>
+      <h2>이름처럼, 튼튼한 치료를 약속합니다.</h2>
+      <p>치료가 끝난 날보다 5년, 10년 뒤가 더 중요하다고 생각합니다. 그래서 세 가지를 지키려 합니다.</p>
+    </div>
+    <ul class="promise">
+      <li><h3>원장이 직접, 끝까지</h3><p>진단과 치료 계획, 수술과 보철, 이후 점검까지 한 명의 전문의가 책임지고 진료합니다.</p></li>
+      <li><h3>필요한 치료만, 충분히 설명하고</h3><p>검사 결과를 화면으로 함께 보며 지금 꼭 필요한 치료와 지켜봐도 되는 부분을 나누어 말씀드립니다.</p></li>
+      <li><h3>치료 후에도 계속</h3><p>임플란트와 보철물은 관리가 수명을 좌우합니다. 정기 검진 일정을 챙겨 드리고 오래 쓰실 수 있게 돕습니다.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="doctor" class="sand">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">DOCTOR</span><h2>의료진 소개</h2></div>
+    <div class="doc">
+      <div class="portrait"><div><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><circle cx="24" cy="17" r="8"/><path d="M8 42c2-9 8-13 16-13s14 4 16 13"/></svg>원장 프로필 사진<br>(촬영 후 교체)</div></div>
+      <div>
+        <h3><small>대표원장</small>이승섭</h3>
+        <span class="spec">보건복지부 인증 통합치의학과 전문의</span>
+        <blockquote>“치과가 무서워서 미루다 오시는 분이 많습니다. 왜 이 치료가 필요한지, 어떤 순서로 진행되는지 이해하실 때까지 설명드리고, 제 가족에게 권할 수 있는 치료만 권하겠습니다.”</blockquote>
+        <ul class="cv">
+          <li>치과의사 · 통합치의학과 전문의</li>
+          <li><span class="tbd">확인 필요</span>&nbsp;출신 대학·수련 병원</li>
+          <li><span class="tbd">확인 필요</span>&nbsp;주요 경력 및 근무 이력</li>
+          <li><span class="tbd">확인 필요</span>&nbsp;학회 활동·수료 과정</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="care">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">TREATMENT</span>
+      <h2>진료과목</h2>
+      <p>임플란트와 보철을 중심으로, 온 가족이 다닐 수 있는 일반 진료를 함께 봅니다.</p>
+    </div>
+    <div class="focus">
+      <img src="img/implant.jpg" alt="독립된 임플란트 수술 공간 투시도" width="629" height="365">
+      <div>
+        <h3>임플란트 센터</h3>
+        <p>일반 진료실과 분리된 수술 공간에서 진행합니다. 3D CT로 뼈 상태와 신경 위치를 확인한 뒤 계획을 세우고, 뼈가 부족한 경우의 처치까지 한곳에서 상담하실 수 있습니다.</p>
+        <ul><li>임플란트</li><li>뼈이식</li><li>상악동거상술</li><li>임플란트 틀니</li><li>만 65세 이상 건강보험 임플란트</li></ul>
+      </div>
+    </div>
+    <ul class="care">
+      <li><h3>보철 치료</h3><p>크라운, 브릿지, 인레이. 씹는 힘과 맞물림을 고려해 제작합니다.</p></li>
+      <li><h3>틀니</h3><p>부분틀니와 완전틀니, 건강보험 틀니 상담과 사후 조정.</p></li>
+      <li><h3>충치·신경치료</h3><p>가능한 한 자연치아를 살리는 방향으로 치료합니다.</p></li>
+      <li><h3>잇몸 치료</h3><p>스케일링, 잇몸 염증 치료와 정기 관리.</p></li>
+      <li><h3>사랑니 발치</h3><p>CT로 신경과의 거리를 확인한 뒤 발치 여부를 정합니다.</p></li>
+      <li><h3>구강검진·예방</h3><p>국가 구강검진, 불소 도포, 실란트 등 예방 진료.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="tour" class="sand">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">CLINIC TOUR</span><h2>둘러보기</h2><p>밝고 차분한 공간에서 편안하게 진료받으실 수 있도록 준비하고 있습니다.</p></div>
+    <div class="tour">
+      <figure><img src="img/treatment.jpg" alt="진료실 투시도" width="1347" height="610"><figcaption>진료실</figcaption></figure>
+      <figure><img src="img/lobby.jpg" alt="접수 데스크와 대기 공간 투시도" width="1340" height="740"><figcaption>접수·대기 공간</figcaption></figure>
+      <figure><img src="img/implant.jpg" alt="임플란트 센터 투시도" width="629" height="365"><figcaption>임플란트 센터</figcaption></figure>
+      <figure><img src="img/consult.jpg" alt="상담실 투시도" width="627" height="365"><figcaption>상담실</figcaption></figure>
+    </div>
+    <p class="note">현재 이미지는 인테리어 설계 투시도이며, 공사가 끝나면 실제 사진으로 바뀝니다.</p>
+  </div>
+</section>
+
+<section id="hours" class="sand" style="padding-top:0">
+  <div class="wrap">
+    <div class="visit">
+      <div class="card">
+        <h3>진료시간</h3>
+        <table class="hours">
+          <tbody>
+            <tr data-d="1"><th>월요일</th><td>09:00 – 18:00</td></tr>
+            <tr data-d="2"><th>화요일</th><td>09:00 – 18:00</td></tr>
+            <tr data-d="3"><th>수요일</th><td>09:00 – 18:00</td></tr>
+            <tr data-d="4"><th>목요일</th><td>09:00 – 18:00 <span class="night">둘째·넷째 주 19:30</span></td></tr>
+            <tr data-d="5"><th>금요일</th><td>09:00 – 18:00</td></tr>
+            <tr data-d="6"><th>토요일</th><td>09:00 – 14:00<small>점심시간 없이 진료</small></td></tr>
+            <tr data-d="0" class="off"><th>일·공휴일</th><td>휴진</td></tr>
+          </tbody>
+        </table>
+        <p class="fine">점심시간 13:00 – 14:00 · 매월 둘째·넷째 주 목요일은 19:30까지 야간진료를 합니다.</p>
+      </div>
+      <div class="card" id="map">
+        <h3>오시는 길</h3>
+        <p class="addr">강원특별자치도 홍천군 홍천읍<br>홍천로8길 4, 2층</p>
+        <dl class="way">
+          <div><dt>전화</dt><dd>033-000-0000 <span class="tbd">개통 후 교체</span></dd></div>
+          <div><dt>주차</dt><dd><span class="tbd">확인 필요</span> 주차 안내</dd></div>
+          <div><dt>대중교통</dt><dd><span class="tbd">확인 필요</span> 가까운 정류장·터미널에서 오는 길</dd></div>
+        </dl>
+        <div class="maps">
+          <a href="https://map.naver.com/p/search/%ED%99%8D%EC%B2%9C%EB%A1%9C8%EA%B8%B8%204" target="_blank" rel="noopener">네이버 지도</a>
+          <a href="https://map.kakao.com/?q=%ED%99%8D%EC%B2%9C%EB%A1%9C8%EA%B8%B8%204" target="_blank" rel="noopener">카카오맵</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">FAQ</span><h2>자주 묻는 질문</h2></div>
+    <div class="faq">
+      <details open><summary>예약 없이 방문해도 진료받을 수 있나요?</summary><p>가능합니다. 다만 예약하신 분을 먼저 진료하기 때문에 기다리실 수 있어, 전화로 미리 시간을 잡고 오시길 권합니다.</p></details>
+      <details><summary>임플란트는 건강보험이 적용되나요?</summary><p>만 65세 이상이시면 평생 2개까지 건강보험이 적용됩니다. 구강 상태에 따라 적용 여부가 달라질 수 있어 검진 후 정확히 안내해 드립니다.</p></details>
+      <details><summary>임플란트 치료는 얼마나 걸리나요?</summary><p>뼈 상태와 심는 위치에 따라 다릅니다. 뼈이식이 필요한 경우 기간이 더 길어질 수 있으며, CT 촬영 후 예상 일정과 내원 횟수를 말씀드립니다.</p></details>
+      <details><summary>야간진료는 언제 하나요?</summary><p>매월 둘째·넷째 주 목요일에 19:30까지 진료합니다. 퇴근 후 방문이 필요하시면 이 날짜로 예약해 주세요.</p></details>
+      <details><summary>토요일에도 진료하나요?</summary><p>토요일은 09:00부터 14:00까지 점심시간 없이 진료합니다. 일요일과 공휴일은 휴진입니다.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <div><h2>진료 예약과 상담은 전화로 받습니다.</h2><p>평일 09:00 – 18:00 · 토요일 09:00 – 14:00</p></div>
+    <div class="num">033-000-0000</div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>서울튼튼플란트치과의원</strong>
+    <p>대표자 이승섭 · 강원특별자치도 홍천군 홍천읍 홍천로8길 4, 2층 · 전화 033-000-0000</p>
+    <p>사업자등록번호 <span class="tbd">게시 전 기재</span> · 2027년 1월 개원 예정</p>
+    <p>© 2027 서울튼튼플란트치과의원</p>
+  </div>
+</footer>
+
+<div class="quick" aria-label="빠른 메뉴">
+  <a class="y" href="#hours">진료<br>시간</a>
+  <a href="#map">오시는<br>길</a>
+  <a href="#top">TOP</a>
+</div>
+<nav class="bar" aria-label="빠른 메뉴">
+  <a href="#hours">진료시간</a><a href="#map">오시는 길</a><a href="#care">진료과목</a>
+</nav>
+
+<script>
+(function(){
+  var d = new Date().getDay();
+  var row = document.querySelector('.hours tr[data-d="' + d + '"]');
+  if (row) row.classList.add('today');
+})();
+</script>
+</body>
+</html>
