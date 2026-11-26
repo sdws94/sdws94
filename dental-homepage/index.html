@@ -104,19 +104,26 @@ section{padding-block:88px}
 @media (max-width:800px){.doc{grid-template-columns:1fr;gap:28px}.portrait{max-width:280px}}
 
 /* 진료과목 */
-.focus{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);background:var(--navy);color:var(--on-navy);border-radius:24px;overflow:hidden;margin-bottom:28px}
-.focus img{width:100%;height:100%;min-height:260px;object-fit:cover;display:block}
-.focus div{padding:40px;align-self:center}
-.focus h3{font-size:1.6rem;font-weight:900;margin-bottom:12px}
-.focus p{color:var(--on-navy-muted)}
-.focus ul{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.focus li{border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:3px 14px;font-size:.88rem}
-.care{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--sand-line);border:1px solid var(--sand-line);border-radius:var(--r);overflow:hidden}
-.care li{background:var(--paper);padding:26px 24px}
-.care h3{font-size:1.08rem;font-weight:800;color:var(--navy);margin-bottom:6px}
-.care p{font-size:.93rem;color:var(--muted);line-height:1.65}
-@media (max-width:860px){.focus{grid-template-columns:1fr}.focus div{padding:28px 24px}.care{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.care{grid-template-columns:1fr}}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:48px}
+.jump a{text-decoration:none;font-weight:700;font-size:.92rem;color:var(--navy);background:var(--navy-soft);border-radius:999px;padding:7px 18px}
+.jump a:hover{background:var(--navy);color:var(--on-navy)}
+.tx-list{display:grid;gap:72px}
+.tx{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.tx:nth-child(even) figure{order:2}
+.tx figure{border-radius:24px;overflow:hidden;background:#f4eee5}
+.tx img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.tx h3{font-size:1.7rem;font-weight:900;color:var(--navy)}
+.tx .lead{font-family:var(--display);font-weight:800;font-size:1.1rem;margin-block:8px 16px}
+.tx p{color:var(--muted)}
+.tx .lead{color:var(--ink)}
+.tx h4{font-family:var(--display);font-size:.88rem;font-weight:800;color:var(--yellow-deep);margin:24px 0 10px}
+.who{display:grid;gap:6px;font-size:.96rem}
+.who li{display:flex;gap:10px}
+.who li::before{content:"";flex:none;width:14px;height:8px;border-left:2.5px solid var(--navy);border-bottom:2.5px solid var(--navy);transform:rotate(-45deg);margin-top:.5em}
+.steps{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none;counter-reset:s;font-size:.9rem;font-weight:700;color:var(--navy)}
+.steps li{counter-increment:s;border:1.5px solid var(--navy);border-radius:999px;padding:4px 14px}
+.steps li::before{content:counter(s) ". "}
+@media (max-width:860px){.tx{grid-template-columns:1fr;gap:22px}.tx:nth-child(even) figure{order:0}.tx-list{gap:56px}.jump{margin-bottom:32px}}
 
 /* 둘러보기 */
 .tour{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
@@ -271,22 +278,81 @@ footer p{margin-top:6px}
       <h2>진료과목</h2>
       <p>임플란트와 보철을 중심으로, 온 가족이 다닐 수 있는 일반 진료를 함께 봅니다.</p>
     </div>
-    <div class="focus">
-      <img src="img/implant.jpg" alt="독립된 임플란트 수술 공간 투시도" width="629" height="365">
-      <div>
-        <h3>임플란트 센터</h3>
-        <p>일반 진료실과 분리된 수술 공간에서 진행합니다. 3D CT로 뼈 상태와 신경 위치를 확인한 뒤 계획을 세우고, 뼈가 부족한 경우의 처치까지 한곳에서 상담하실 수 있습니다.</p>
-        <ul><li>임플란트</li><li>뼈이식</li><li>상악동거상술</li><li>임플란트 틀니</li><li>만 65세 이상 건강보험 임플란트</li></ul>
-      </div>
+    <nav class="jump" aria-label="진료과목 바로가기"><a href="#care-implant">임플란트</a><a href="#care-prosthetic">보철 치료</a><a href="#care-denture">틀니</a><a href="#care-endo">충치·신경치료</a><a href="#care-gum">잇몸 치료</a><a href="#care-wisdom">사랑니 발치</a><a href="#care-checkup">구강검진·예방</a></nav>
+    <div class="tx-list">
+      <article class="tx" id="care-implant">
+        <figure><img src="img/care/implant.jpg" alt="임플란트 설명 이미지" width="1200" height="800"></figure>
+        <div>
+          <h3>임플란트</h3>
+          <p class="lead">빠진 치아의 자리를 뿌리부터 다시 세웁니다.</p>
+          <p>치아가 빠진 자리의 잇몸뼈에 인공 뿌리를 심고 그 위에 보철물을 올리는 치료입니다. 옆 치아를 깎지 않고 빠진 자리만 회복할 수 있습니다. 일반 진료실과 분리된 수술 공간에서 진행하며, 3D CT로 뼈의 양과 신경 위치를 확인한 뒤 계획을 세웁니다. 뼈가 부족하면 뼈이식이나 상악동거상술을 함께 상담해 드립니다.</p>
+          <h4>이런 분께 필요합니다</h4>
+          <ul class="who"><li>치아가 빠진 채로 지내고 계신 분</li><li>틀니가 헐겁거나 불편하신 분</li><li>만 65세 이상으로 건강보험 임플란트를 알아보시는 분</li></ul>
+          <h4>진료 순서</h4>
+          <ol class="steps"><li>검진·CT 촬영</li><li>치료 계획 상담</li><li>식립 수술</li><li>보철물 연결</li><li>정기 점검</li></ol>
+        </div>
+      </article>
+      <article class="tx" id="care-prosthetic">
+        <figure><img src="img/care/prosthetic.jpg" alt="보철 치료 설명 이미지" width="1200" height="800"></figure>
+        <div>
+          <h3>보철 치료</h3>
+          <p class="lead">깨지고 닳은 치아를 씌우고 이어 줍니다.</p>
+          <p>충치나 파절로 손상이 큰 치아는 때우는 것만으로 버티기 어렵습니다. 크라운으로 치아 전체를 감싸 보호하거나, 인레이로 손상된 부분만 채우거나, 브릿지로 빠진 자리를 이어 줍니다. 씹는 힘이 걸리는 방향과 위아래 맞물림을 확인해 재료와 형태를 정합니다.</p>
+          <h4>이런 분께 필요합니다</h4>
+          <ul class="who"><li>신경치료를 받은 치아가 있는 분</li><li>치아가 깨지거나 금이 간 분</li><li>오래된 보철물이 들뜨거나 냄새가 나는 분</li></ul>
+        </div>
+      </article>
+      <article class="tx" id="care-denture">
+        <figure><img src="img/care/denture.jpg" alt="틀니 설명 이미지" width="1200" height="800"></figure>
+        <div>
+          <h3>틀니</h3>
+          <p class="lead">여러 개의 치아를 한 번에 회복합니다.</p>
+          <p>남아 있는 치아에 걸어서 쓰는 부분틀니와, 치아가 하나도 없을 때 쓰는 완전틀니가 있습니다. 처음 끼면 적응 기간이 필요하고 잇몸 모양이 변하면 헐거워지기 때문에, 만든 뒤의 조정과 점검이 중요합니다. 만 65세 이상은 건강보험 틀니 적용 여부를 확인해 드립니다.</p>
+          <h4>이런 분께 필요합니다</h4>
+          <ul class="who"><li>빠진 치아가 여러 개인 분</li><li>지금 쓰는 틀니가 아프거나 자주 빠지는 분</li><li>임플란트 수술이 부담스러우신 분</li></ul>
+        </div>
+      </article>
+      <article class="tx" id="care-endo">
+        <figure><img src="img/care/endo.jpg" alt="충치·신경치료 설명 이미지" width="1200" height="800"></figure>
+        <div>
+          <h3>충치·신경치료</h3>
+          <p class="lead">가능한 한 내 치아를 살립니다.</p>
+          <p>초기 충치는 썩은 부분만 제거하고 레진 등으로 채웁니다. 충치가 신경까지 닿으면 치아 속 신경관을 깨끗이 소독하고 채우는 신경치료가 필요합니다. 충치는 아프기 시작하면 이미 깊어진 경우가 많아, 통증이 없을 때 발견하는 것이 치아를 가장 많이 남기는 방법입니다.</p>
+          <h4>이런 분께 필요합니다</h4>
+          <ul class="who"><li>찬물이나 단 음식에 이가 시린 분</li><li>씹을 때 찌릿하거나 욱신거리는 분</li><li>치아에 검은 점이나 구멍이 보이는 분</li></ul>
+        </div>
+      </article>
+      <article class="tx" id="care-gum">
+        <figure><img src="img/care/gum.jpg" alt="잇몸 치료 설명 이미지" width="1200" height="800"></figure>
+        <div>
+          <h3>잇몸 치료</h3>
+          <p class="lead">치아를 붙잡는 잇몸과 뼈를 지킵니다.</p>
+          <p>잇몸병은 통증 없이 진행되어 치아가 흔들릴 때에야 알게 되는 경우가 많습니다. 스케일링으로 치석을 제거하고, 염증이 깊으면 잇몸 아래 뿌리 면까지 단계적으로 치료합니다. 임플란트도 잇몸이 건강해야 오래 쓸 수 있습니다. 만 19세 이상은 연 1회 스케일링에 건강보험이 적용됩니다.</p>
+          <h4>이런 분께 필요합니다</h4>
+          <ul class="who"><li>양치할 때 피가 나는 분</li><li>잇몸이 붓거나 입 냄새가 신경 쓰이는 분</li><li>치아 사이가 벌어지거나 흔들리는 분</li></ul>
+        </div>
+      </article>
+      <article class="tx" id="care-wisdom">
+        <figure><img src="img/care/wisdom.jpg" alt="사랑니 발치 설명 이미지" width="1200" height="800"></figure>
+        <div>
+          <h3>사랑니 발치</h3>
+          <p class="lead">뽑아야 하는 사랑니인지 먼저 확인합니다.</p>
+          <p>모든 사랑니를 뽑아야 하는 것은 아닙니다. 바르게 나서 잘 닦이는 사랑니는 두어도 되지만, 비스듬히 누워 앞 어금니를 밀거나 주변에 염증을 반복해서 일으키면 발치를 권합니다. CT로 아래턱 신경과의 거리를 확인한 뒤 발치 방법을 정합니다.</p>
+          <h4>이런 분께 필요합니다</h4>
+          <ul class="who"><li>사랑니 주변이 자주 붓고 아픈 분</li><li>사랑니와 앞 치아 사이에 음식이 계속 끼는 분</li><li>검진에서 누운 사랑니가 발견된 분</li></ul>
+        </div>
+      </article>
+      <article class="tx" id="care-checkup">
+        <figure><img src="img/care/checkup.jpg" alt="구강검진·예방 설명 이미지" width="1200" height="800"></figure>
+        <div>
+          <h3>구강검진·예방</h3>
+          <p class="lead">아프기 전에 오는 치과가 가장 좋은 치과입니다.</p>
+          <p>정기 검진으로 충치와 잇몸병을 초기에 발견하면 치료가 간단해지고 비용도 줄어듭니다. 국가 구강검진, 어린이 불소 도포와 실란트(어금니 홈 메우기), 올바른 칫솔질 안내까지 가족 모두의 예방 진료를 봅니다.</p>
+          <h4>이런 분께 필요합니다</h4>
+          <ul class="who"><li>치과에 다녀온 지 1년이 넘은 분</li><li>국가 구강검진 대상이신 분</li><li>아이의 충치 예방이 필요한 보호자</li></ul>
+        </div>
+      </article>
     </div>
-    <ul class="care">
-      <li><h3>보철 치료</h3><p>크라운, 브릿지, 인레이. 씹는 힘과 맞물림을 고려해 제작합니다.</p></li>
-      <li><h3>틀니</h3><p>부분틀니와 완전틀니, 건강보험 틀니 상담과 사후 조정.</p></li>
-      <li><h3>충치·신경치료</h3><p>가능한 한 자연치아를 살리는 방향으로 치료합니다.</p></li>
-      <li><h3>잇몸 치료</h3><p>스케일링, 잇몸 염증 치료와 정기 관리.</p></li>
-      <li><h3>사랑니 발치</h3><p>CT로 신경과의 거리를 확인한 뒤 발치 여부를 정합니다.</p></li>
-      <li><h3>구강검진·예방</h3><p>국가 구강검진, 불소 도포, 실란트 등 예방 진료.</p></li>
-    </ul>
   </div>
 </section>
 
