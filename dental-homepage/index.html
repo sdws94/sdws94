@@ -46,14 +46,15 @@ h3{text-wrap:balance}
 
 /* 첫 화면 */
 .hero{position:relative;background:var(--navy);color:var(--on-navy);overflow:hidden}
-.hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,34,74,.96) 0%,rgba(20,34,74,.88) 38%,rgba(20,34,74,.45) 72%,rgba(20,34,74,.25) 100%)}
-.hero .wrap{position:relative;z-index:1;padding-block:calc(var(--hdr) + 72px) 64px}
+.hero > img{position:absolute;top:0;right:0;width:min(50%,720px);height:100%;object-fit:cover;object-position:50% 8%}
+.hero::after{content:"";position:absolute;top:0;right:0;width:min(50%,720px);height:100%;background:linear-gradient(90deg,rgba(20,34,74,1) 0%,rgba(20,34,74,.6) 16%,rgba(20,34,74,0) 46%),linear-gradient(180deg,rgba(20,34,74,.78) 0%,rgba(20,34,74,0) 20%),linear-gradient(0deg,rgba(20,34,74,.35) 0%,rgba(20,34,74,0) 30%)}
+.hero .wrap{position:relative;z-index:1;padding-block:calc(var(--hdr) + 80px) 76px}
+.hero .wrap > *{max-width:540px}
 .kicker{font-size:.86rem;font-weight:700;color:#9db8f2;letter-spacing:.02em}
 .hero h1{font-size:clamp(2.1rem,1.4rem + 3.4vw,3.5rem);line-height:1.22;margin-block:14px 18px}
 .hero h1 em{font-style:normal;color:var(--yellow)}
 .hero .sub{max-width:31em;color:var(--on-navy-sub);font-size:1.05rem}
-.finder{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:760px;margin-top:30px}
+.finder{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:30px}
 .finder a{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:50px;padding:0 16px;border-radius:12px;background:var(--paper);color:var(--ink);text-decoration:none;font-weight:700;font-size:.93rem}
 .finder a::after{content:"→";color:var(--blue);font-weight:500}
 .finder a:hover{background:var(--blue-tint)}
@@ -65,11 +66,12 @@ h3{text-wrap:balance}
 .btn-o:hover{background:rgba(255,255,255,.1)}
 .strip{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;font-size:.9rem;color:var(--on-navy-sub)}
 .strip b{color:var(--on-navy);font-weight:700;font-variant-numeric:tabular-nums}
-.render-note{position:absolute;right:max(16px,env(safe-area-inset-right,0px));bottom:14px;z-index:1;font-size:.72rem;color:rgba(255,255,255,.75)}
 @media (max-width:760px){
-  .hero::after{background:linear-gradient(180deg,rgba(20,34,74,.9) 0%,rgba(20,34,74,.86) 60%,rgba(20,34,74,.7) 100%)}
-  .hero .wrap{padding-block:calc(var(--hdr) + 40px) 56px}
-  .finder{grid-template-columns:1fr 1fr}
+  .hero{display:flex;flex-direction:column}
+  .hero .wrap{order:2;padding-block:20px 48px;width:100%}
+  .hero .wrap > *{max-width:none}
+  .hero > img{order:1;position:static;width:100%;height:auto;aspect-ratio:1/1;object-position:50% 4%}
+  .hero::after{top:0;width:100%;height:auto;aspect-ratio:1/1;background:linear-gradient(180deg,rgba(20,34,74,.8) 0%,rgba(20,34,74,0) 24%),linear-gradient(0deg,rgba(20,34,74,1) 0%,rgba(20,34,74,0) 30%)}
   .cta .btn{flex:1 1 140px}
 }
 
@@ -218,7 +220,7 @@ h3{text-wrap:balance}
 
 <main id="top">
 <section class="hero">
-  <img src="img/lobby.jpg" alt="" width="1340" height="740">
+  <img src="img/hero-doctor.jpg" alt="서울튼튼플란트치과 이승섭 대표원장" width="1280" height="1603">
   <div class="wrap">
     <p class="kicker">홍천읍 · 통합치의학과 전문의 진료 · 2027년 1월 개원 예정</p>
     <h1>오래 쓰는 치아를 위해,<br><em>튼튼하게 심고 꼼꼼하게 살핍니다</em><br>서울튼튼플란트치과</h1>
@@ -237,7 +239,6 @@ h3{text-wrap:balance}
       <span>토요일 <b>09:00~14:00</b></span>
     </div>
   </div>
-  <span class="render-note">배경: 접수·대기 공간 인테리어 투시도</span>
 </section>
 
 <section class="band" id="about">
