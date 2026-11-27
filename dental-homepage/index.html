@@ -131,7 +131,7 @@ h3{text-wrap:balance}
 @media (max-width:800px){.nums ul{grid-template-columns:1fr 1fr}}
 
 /* 진료과목 */
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;max-width:680px}
 .chips a{text-decoration:none;font-weight:500;font-size:.9rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
 .chips a:hover{border-color:var(--blue);color:var(--blue)}
 .feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px;align-items:center;background:var(--navy);color:var(--on-navy);border-radius:20px;padding:24px;margin-bottom:16px}
@@ -148,7 +148,7 @@ h3{text-wrap:balance}
 .cat p{color:var(--sub);font-size:.95rem}
 .who{display:grid;gap:5px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-size:.93rem}
 .feature .who{border-top-color:rgba(255,255,255,.2)}
-.who li{display:flex;gap:9px}
+.who li{display:flex;gap:9px;text-wrap:pretty}
 .who li::before{content:"";flex:none;width:12px;height:7px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg);margin-top:.52em}
 .feature .who li::before{border-color:var(--yellow)}
 .steps{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;counter-reset:s;font-size:.85rem;font-weight:500}
