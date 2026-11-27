@@ -9,6 +9,8 @@
 <link rel="canonical" href="https://example.com/">
 <meta name="geo.region" content="KR-42">
 <meta name="geo.placename" content="강원특별자치도 홍천군 홍천읍">
+<meta name="geo.position" content="37.689846;127.887046">
+<meta name="ICBM" content="37.689846, 127.887046">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="서울튼튼플란트치과">
@@ -198,18 +200,34 @@ h3{text-wrap:balance}
 .hours tr.today{background:var(--blue-tint)}
 .hours tr.today th{color:var(--blue)}
 .fine{margin-top:12px;font-size:.88rem;color:var(--faint)}
-.place{border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.place img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.place{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--paper)}
 .place .in{padding:22px}
+.place h3{font-size:1.05rem;margin-bottom:14px}
 .place dl{display:grid;gap:12px}
 .place dl div{display:grid;grid-template-columns:4.6em 1fr;gap:10px;font-size:.95rem}
 .place dt{font-weight:700}
 .place dd{color:var(--sub)}
+.place dd small{display:block;color:var(--faint);font-size:.82rem;margin-top:2px}
 .place .tel-num{user-select:all;font-variant-numeric:tabular-nums}
 .maps{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.maps a{flex:1 1 130px;display:inline-flex;align-items:center;justify-content:center;min-height:44px;text-decoration:none;font-weight:700;font-size:.9rem;border:1px solid var(--line);border-radius:10px;padding:0 14px}
+.maps a{flex:1 1 120px;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;min-height:44px;text-decoration:none;font-weight:700;font-size:.9rem;border:1px solid var(--line);border-radius:10px;padding:0 14px}
 .maps a:hover{border-color:var(--blue);color:var(--blue)}
 @media (max-width:860px){.visit{grid-template-columns:1fr}}
+/* 지도: 실제 사이트에서는 카카오 지도가 이 상자를 채우고, 불러오지 못하면 아래 안내가 남는다 */
+.kmap{position:relative;margin-top:28px;min-height:432px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--paper)}
+.kmap-fb{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:24px;text-align:center;
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--mist) 1px,transparent 1px),linear-gradient(90deg,var(--mist) 1px,transparent 1px);
+  background-size:44px 44px;background-position:center}
+.kmap-fb svg{width:38px;height:38px;color:var(--blue);margin-bottom:4px}
+.kmap-fb strong{font-size:1.05rem}
+.kmap-fb span{color:var(--sub);font-size:.95rem}
+.kmap-fb small{max-width:30em;margin-top:8px;color:var(--faint);font-size:.82rem;text-wrap:balance}
+.kmap.on{min-height:0}
+.kmap.on .kmap-fb{display:none}
+.kmap .root_daum_roughmap{width:100% !important;padding:0;border:0}
+.kmap .root_daum_roughmap .cont{display:none}
+@media (max-width:700px){.kmap{min-height:332px;margin-top:20px}}
 
 /* 푸터 */
 .ftr{background:var(--navy);color:var(--on-navy-sub);font-size:.86rem;padding-block:44px 120px}
@@ -256,6 +274,12 @@ h3{text-wrap:balance}
     "addressRegion": "강원특별자치도",
     "addressCountry": "KR"
    },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 37.689846,
+    "longitude": 127.887046
+   },
+   "hasMap": "https://map.kakao.com/link/map/%EC%84%9C%EC%9A%B8%ED%8A%BC%ED%8A%BC%ED%94%8C%EB%9E%80%ED%8A%B8%EC%B9%98%EA%B3%BC,37.689846,127.887046",
    "areaServed": [
     "홍천군",
     "홍천읍"
@@ -406,6 +430,14 @@ h3{text-wrap:balance}
      "acceptedAnswer": {
       "@type": "Answer",
       "text": "강원특별자치도 홍천군 홍천읍 홍천로8길 4, 2층에 있습니다. 2027년 1월 개원 예정입니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "주차는 어디에 하나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "건물 바로 옆 홍천전통시장 공영주차장(홍천읍 홍천로 371)을 이용하시면 됩니다."
      }
     },
     {
@@ -615,6 +647,7 @@ h3{text-wrap:balance}
       <details><summary>야간진료는 언제 하나요?</summary><p>매월 둘째·넷째 주 목요일에 19:30까지 진료합니다. 퇴근 후 방문이 필요하시면 이 날짜로 예약해 주세요.</p></details>
       <details><summary>토요일에도 진료하나요?</summary><p>토요일은 09:00부터 14:00까지 점심시간 없이 진료합니다. 일요일과 공휴일은 휴진입니다.</p></details>
       <details><summary>서울튼튼플란트치과는 어디에 있나요?</summary><p>강원특별자치도 홍천군 홍천읍 홍천로8길 4, 2층에 있습니다. 2027년 1월 개원 예정입니다.</p></details>
+      <details><summary>주차는 어디에 하나요?</summary><p>건물 바로 옆 홍천전통시장 공영주차장(홍천읍 홍천로 371)을 이용하시면 됩니다.</p></details>
       <details><summary>어떤 진료를 받을 수 있나요?</summary><p>임플란트, 보철 치료(크라운·브릿지·인레이), 틀니, 충치·신경치료, 잇몸 치료와 스케일링, 사랑니 발치, 구강검진과 예방 진료를 봅니다.</p></details>
       <details><summary>진료는 누가 하나요?</summary><p>보건복지부 인증 통합치의학과 전문의인 이승섭 대표원장이 상담부터 수술, 보철, 이후 점검까지 직접 진료합니다.</p></details>
     </div>
@@ -642,19 +675,29 @@ h3{text-wrap:balance}
         <p class="fine">진료 예약과 상담은 전화로 받습니다.</p>
       </div>
       <div class="place" id="map">
-        <img loading="lazy" decoding="async" src="img/consult.jpg" alt="상담실 투시도" width="627" height="365">
         <div class="in">
+          <h3>오시는 길</h3>
           <dl>
             <div><dt>주소</dt><dd>강원특별자치도 홍천군 홍천읍 홍천로8길 4, 2층</dd></div>
             <div><dt>전화</dt><dd><span class="tel-num">033-000-0000</span> <span class="tbd">개통 후 교체</span></dd></div>
-            <div><dt>주차</dt><dd><span class="tbd">확인 필요</span> 주차 안내</dd></div>
+            <div><dt>주차</dt><dd>건물 바로 옆 홍천전통시장 공영주차장을 이용해 주세요.<small>내비게이션 주소: 홍천읍 홍천로 371</small></dd></div>
             <div><dt>대중교통</dt><dd><span class="tbd">확인 필요</span> 가까운 정류장·터미널에서 오는 길</dd></div>
           </dl>
           <div class="maps">
-            <a href="https://map.naver.com/p/search/%ED%99%8D%EC%B2%9C%EB%A1%9C8%EA%B8%B8%204" target="_blank" rel="noopener">네이버 지도에서 보기</a>
-            <a href="https://map.kakao.com/?q=%ED%99%8D%EC%B2%9C%EB%A1%9C8%EA%B8%B8%204" target="_blank" rel="noopener">카카오맵에서 보기</a>
+            <a href="https://map.kakao.com/link/to/%EC%84%9C%EC%9A%B8%ED%8A%BC%ED%8A%BC%ED%94%8C%EB%9E%80%ED%8A%B8%EC%B9%98%EA%B3%BC,37.689846,127.887046" target="_blank" rel="noopener">카카오맵 길찾기</a>
+            <a href="https://map.kakao.com/link/map/%EC%84%9C%EC%9A%B8%ED%8A%BC%ED%8A%BC%ED%94%8C%EB%9E%80%ED%8A%B8%EC%B9%98%EA%B3%BC,37.689846,127.887046" target="_blank" rel="noopener">카카오맵 보기</a>
+            <a href="https://map.naver.com/p/search/%ED%99%8D%EC%B2%9C%EB%A1%9C8%EA%B8%B8%204" target="_blank" rel="noopener">네이버 지도 보기</a>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="kmap" id="kmap" role="region" aria-label="병원 위치 지도">
+      <div id="daumRoughmapContainer1795769257350" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+      <div class="kmap-fb">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.800 7-13a7 7 0 0 0-7-7zm0 9.600A2.600 2.600 0 1 1 12 6.400a2.600 2.600 0 0 1 0 5.200z"/></svg>
+        <strong>서울튼튼플란트치과</strong>
+        <span>강원특별자치도 홍천군 홍천읍 홍천로8길 4, 2층</span>
+        <small>지도를 불러오는 중입니다. 지도가 보이지 않으면 위의 버튼으로 확인해 주세요.</small>
       </div>
     </div>
   </div>
@@ -698,6 +741,20 @@ h3{text-wrap:balance}
     else if(close&&mins<9*60){st.textContent='오늘 9시부터 '+until+' 진료 (공휴일 휴진)'}
     else{st.textContent='지금은 진료 시간이 아닙니다'}
   }
+})();
+</script>
+<!-- 카카오맵 지도 퍼가기: 불러오지 못하면 지도 자리의 안내 문구가 그대로 남습니다 -->
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://t1.kakaocdn.net/kakaomapweb/roughmap/loader/prod/roughmapLoader.js"></script>
+<script charset="UTF-8">
+(function(){
+  var box=document.getElementById('kmap'),c=document.getElementById('daumRoughmapContainer1795769257350');
+  if(!box||!c||!window.daum||!daum.roughmap)return;
+  function shown(){if(c.querySelector('.wrap_map')){box.classList.add('on');return true}return false}
+  if(window.MutationObserver){var mo=new MutationObserver(function(){if(shown())mo.disconnect()});mo.observe(c,{childList:true,subtree:true})}
+  try{
+    new daum.roughmap.Lander({"timestamp":"1795769257350","key":"5qm3vzvu5pi","mapWidth":"640","mapHeight":window.innerWidth<700?"300":"400"}).render();
+  }catch(e){}
+  shown();
 })();
 </script>
 </body>
